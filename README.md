@@ -1,6 +1,6 @@
 # Challenges App
-*_created 16 July 2020      |    Rails v: 6.0.3_*
-*_Created with webpack=react using Postgresql_*
+*_created 16 July 2020      |    Rails v: 6.0.3 |  Created with webpack=react using Postgresql_*
+
 The purpose of this app is to create an application that records challenges that students complete.
 
 By completing a challenge, the student will be given a number of points relevant to the challenge.
