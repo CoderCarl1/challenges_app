@@ -6,6 +6,7 @@ class CreateChallenges < ActiveRecord::Migration[6.0]
       t.text :description
       t.date :time
       t.integer :points
+      
 
       t.timestamps
     end

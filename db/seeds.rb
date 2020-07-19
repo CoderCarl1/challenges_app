@@ -1,33 +1,38 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 challenges = [
-    {name: "Challenge 1" , slug: "Challenge-1",  description: "The very first challenge", points: "1" }
+    {name: "Challenge 1",  description: "The very first challenge"}
 ]
 
 users = [
-    {email: "abc@123.net", password: "abc123"}
+    {email: "abc@123.net", password: "abc123"},
+    {email: "def@123.net", password: "def123"}
 ]
 
 admins = [
     {email: "carl@carl.com", password: "carl123"}
 ]
+
+puts "===DESTROYING EXISTING DATA==="
 Admin.destroy_all
 User.destroy_all
+Leaderboard.destroy_all
 Challenge.destroy_all
 
-User.create(users)
-Admin.create(admins)
-Challenge.create(challenges)
+puts "===SEEDING==="
+puts "---USERS---"
+pp User.create!(users)
+puts "---ADMINS---"
+pp Admin.create!(admins)
+puts "---CHALLENGES---"
+pp Challenge.create(challenges)
+puts "===TESTS==="
+puts "creating test challenge and adding users"
+pp test_challenge = Challenge.find_by(name: "Challenge 1")
 
-# Challenge.first.students
-# Challenge.first.teachers
-
-
-# Challenge.first.users: << User.first
-# Challenge.first.admins: << Admin.first
+puts "adding students to first challenge"
+pp test_challenge.students << User.all
+puts "adding admins  to first challenge"
+pp test_challenge.teachers << Admin.all
+puts "adding students to first challenge"
+pp test_challenge.leaderboard
