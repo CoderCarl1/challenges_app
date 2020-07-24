@@ -16,7 +16,7 @@ class Challenge < ApplicationRecord
     # validates_length_of :name, :minimum
     # validates_numericality_of :points, :greater_than, :message => ""
     # validates_exclusion_of :name, in: :list of swears ,:message => "cannot be in the name"
-    # validates_format_of :email, :with [regexp for emails], :message => "must be a valid email"
+    
     
     # :on => :save
 
