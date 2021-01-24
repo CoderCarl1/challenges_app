@@ -3,8 +3,9 @@ class CreateChallenges < ActiveRecord::Migration[6.0]
     create_table :challenges do |t|
       t.string :name
       t.string :slug
+      t.string :language
       t.text :description
-      t.date :time
+      t.datetime :time
       t.integer :points
       
 

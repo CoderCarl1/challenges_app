@@ -5,12 +5,12 @@ challenges = [
 ]
 
 users = [
-    {email: "abc@123.net", password: "abc123"},
-    {email: "def@123.net", password: "def123"}
+    {email: "abc@coderacademy.edu.au", password: "abc123"},
+    {email: "def@coderacademy.edu.au", password: "def123"}
 ]
 
 admins = [
-    {email: "carl@carl.com", password: "carl123"}
+    {email: "carl.davidson@coderacademy.edu.au", password: "carl123"}
 ]
 
 puts "===DESTROYING EXISTING DATA==="
@@ -29,10 +29,11 @@ pp Challenge.create(challenges)
 puts "===TESTS==="
 puts "creating test challenge and adding users"
 pp test_challenge = Challenge.find_by(name: "Challenge 1")
-
-puts "adding students to first challenge"
+puts "adding test students to first challenge"
 pp test_challenge.students << User.all
-puts "adding admins  to first challenge"
+puts "adding admins to first challenge"
 pp test_challenge.teachers << Admin.all
-puts "adding students to first challenge"
+puts "Showing the current leaderboard"
 pp test_challenge.leaderboard
+puts "Showing the current leaderboard and students"
+pp test_challenge.leaderboard.students
